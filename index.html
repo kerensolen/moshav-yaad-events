@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>נפגשים ביעד — ספטמבר 2026 – יוני 2027</title>
+<meta name="description" content="תוכנית התרבות הקהילתית של מושב יעד, ספטמבר 2026 – יוני 2027. לוחצים על אירוע ומוסיפים אותו ליומן.">
+<meta property="og:title" content="נפגשים ביעד — ספטמבר 2026 – יוני 2027">
+<meta property="og:description" content="לוחצים על אירוע, והוא נכנס ישר ליומן שלכם.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F7F2E4; --card:#fff; --green:#117C09; --green-d:#0C5C06;
+  --gold:#E8B54D; --coral:#E2654A; --ink:#22261F; --muted:#6E7268;
+  --chip:#E7F2E4; --line:#EAE3D2;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--ink);
+  font-family:Assistant,"Segoe UI",system-ui,sans-serif;line-height:1.55;
+  -webkit-text-size-adjust:100%}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 18px 64px}
+header{padding:8px 0 22px}
+.top{display:flex;align-items:flex-start;gap:18px}
+.titles{flex:1;min-width:0}
+.logo{width:104px;height:auto;flex:none;color:var(--green);margin-top:2px}
+@media (max-width:520px){ .logo{width:70px} .top{gap:12px} }
+.eyebrow{color:var(--coral);font-weight:700;letter-spacing:.14em;font-size:13px;margin:0}
+h1{font-size:clamp(38px,7vw,62px);line-height:1.02;margin:6px 0 6px;font-weight:800;color:var(--ink)}
+.sub{margin:0;font-weight:700;font-size:18px}
+.season{margin:2px 0 0;font-weight:700;font-size:18px;color:var(--muted)}
+.bar{display:flex;height:8px;border-radius:99px;overflow:hidden;margin:20px 0 6px}
+.bar i{display:block;height:100%}
+.bar i:nth-child(1){flex:3;background:var(--coral)}
+.bar i:nth-child(2){flex:4;background:var(--gold)}
+.bar i:nth-child(3){flex:5;background:var(--green)}
+
+.hero{background:var(--green);color:#fff;border-radius:20px;padding:22px 22px 20px;margin:8px 0 26px}
+.hero h2{margin:0 0 6px;font-size:22px;font-weight:800}
+.hero p{margin:0 0 16px;font-size:15px;opacity:.92}
+.hero .actions{margin:0}
+.hero .btn{background:#fff;color:var(--green-d);border-color:#fff}
+.hero .btn:hover{background:var(--cream)}
+
+.hero .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.hero .btn.ghost:hover{background:rgba(255,255,255,.14)}
+.lede{margin:-14px 0 22px;color:var(--muted);font-size:14px;text-align:center}
+.months{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:760px){ .months{grid-template-columns:1fr} }
+.month{background:var(--card);border-radius:20px;padding:20px 20px 8px;margin:0;
+  box-shadow:0 2px 10px rgba(30,40,25,.05)}
+.month h2{margin:0 0 4px;color:var(--green);font-size:26px;font-weight:800}
+.month .yr{color:var(--muted);font-weight:600;font-size:15px}
+.month ul{list-style:none;margin:0;padding:0}
+.event{padding:16px 0;border-top:1px solid var(--line)}
+.event:first-child{border-top:0;padding-top:10px}
+.head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.event h3{margin:0;font-size:19px;font-weight:700;flex:1;min-width:0}
+.chip{font-weight:700;font-size:14px;padding:5px 12px;border-radius:99px;white-space:nowrap}
+.chip.date{background:var(--chip);color:var(--green-d)}
+.chip.soon{background:#FBEBD8;color:#9A5B2A}
+.note{margin:6px 0 0;color:var(--muted);font-size:14px}
+.pending{margin:8px 0 0;color:var(--muted);font-size:13px;font-style:italic}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.btn{display:inline-block;padding:9px 16px;border-radius:99px;font-size:14px;font-weight:700;
+  text-decoration:none;border:1.5px solid var(--green);color:var(--green-d);background:transparent;
+  transition:background .15s,color .15s}
+.btn:hover{background:var(--chip)}
+.btn.primary{background:var(--green);color:#fff}
+.btn.primary:hover{background:var(--green-d)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+.also{background:var(--green);color:#fff;border-radius:20px;padding:22px;margin:26px 0 0}
+.also h2{margin:0 0 14px;font-size:22px;font-weight:800}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+  padding:7px 15px;border-radius:99px;font-size:14px;font-weight:600}
+
+.tag{text-align:center;font-size:clamp(24px,6vw,34px);font-weight:800;color:var(--green-d);
+  border:2px solid var(--green);border-radius:20px;padding:20px;margin:26px 0 0}
+footer{margin-top:22px;color:var(--muted);font-size:13px;text-align:center}
+@media (max-width:420px){ .btn{flex:1;text-align:center} }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="top">
+    <div class="titles">
+      <p class="eyebrow">שומרים את התאריכים</p>
+      <h1>נפגשים ביעד</h1>
+      <p class="sub">תוכנית התרבות הקהילתית</p>
+      <p class="season">ספטמבר 2026 – יוני 2027</p>
+    </div>
+    <svg class="logo" viewBox="0 0 420 442" role="img" aria-label="מושב יעד" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0.000000,442.000000) scale(0.100000,-0.100000)"
+fill="currentColor" >
+<path d="M1000 4320 l0 -100 95 0 95 0 0 100 0 100 -95 0 -95 0 0 -100z M1284
+4407 c-2 -8 -4 -52 -2 -98 l3 -84 95 0 95 0 0 95 0 95 -93 3 c-71 2 -94 0 -98
+-11z M1852 4323 l3 -98 93 -3 92 -3 0 101 0 100 -95 0 -96 0 3 -97z M2134
+4407 c-3 -8 -4 -52 -2 -98 l3 -84 95 0 95 0 3 98 3 97 -96 0 c-70 0 -97 -4
+-101 -13z M430 4055 l0 -96 98 3 97 3 3 93 3 92 -101 0 -100 0 0 -95z M1000
+4055 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M1282 4058 l3 -93 95 0
+95 0 3 93 3 92 -101 0 -101 0 3 -92z M1570 4055 l0 -95 95 0 95 0 0 95 0 95
+-95 0 -95 0 0 -95z M1850 4055 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z
+M2132 4058 l3 -93 98 -3 97 -3 0 96 0 95 -100 0 -101 0 3 -92z M2420 4055 l0
+-95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M430 3795 l0 -95 100 0 101 0 -3
+93 -3 92 -97 3 -98 3 0 -96z M720 3795 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95
+0 0 -95z M1000 3795 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M1287
+3884 c-4 -4 -7 -47 -7 -96 l0 -88 100 0 101 0 -3 93 -3 92 -90 3 c-50 1 -94 0
+-98 -4z M1570 3795 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M1850 3795
+l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M2137 3883 c-4 -3 -7 -46 -7
+-95 l0 -88 100 0 100 0 0 95 0 95 -93 0 c-52 0 -97 -3 -100 -7z M2420 3795 l0
+-95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M2700 3795 l0 -95 100 0 101 0 -3
+93 -3 92 -97 3 -98 3 0 -96z M2990 3795 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95
+0 0 -95z M150 3525 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M430 3525
+l0 -96 98 3 97 3 3 93 3 92 -101 0 -100 0 0 -95z M720 3525 l0 -95 95 0 95 0
+0 95 0 95 -95 0 -95 0 0 -95z M1000 3525 l0 -95 95 0 95 0 0 95 0 95 -95 0
+-95 0 0 -95z M1282 3528 l3 -93 95 0 95 0 3 93 3 92 -101 0 -101 0 3 -92z
+M1570 3525 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M1850 3525 l0 -95
+95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M2132 3528 l3 -93 98 -3 97 -3 0 96 0
+95 -100 0 -101 0 3 -92z M2420 3525 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0
+-95z M2700 3525 l0 -96 98 3 97 3 3 93 3 92 -101 0 -100 0 0 -95z M2990 3525
+l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M430 3265 l0 -95 100 0 101 0
+-3 93 -3 92 -97 3 -98 3 0 -96z M720 3265 l0 -95 95 0 95 0 0 95 0 95 -95 0
+-95 0 0 -95z M1000 3265 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M1287
+3354 c-4 -4 -7 -47 -7 -96 l0 -88 100 0 101 0 -3 93 -3 92 -90 3 c-50 1 -94 0
+-98 -4z M1570 3265 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M1850 3265
+l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M2137 3353 c-4 -3 -7 -46 -7
+-95 l0 -88 100 0 100 0 0 95 0 95 -93 0 c-52 0 -97 -3 -100 -7z M2420 3265 l0
+-95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M2700 3265 l0 -95 100 0 101 0 -3
+93 -3 92 -97 3 -98 3 0 -96z M150 3000 l0 -100 95 0 95 0 0 100 0 100 -95 0
+-95 0 0 -100z M437 3094 c-4 -4 -7 -49 -7 -101 l0 -94 98 3 97 3 0 95 0 95
+-90 3 c-50 1 -94 0 -98 -4z M720 3000 l0 -100 95 0 96 0 -3 98 -3 97 -92 3
+-93 3 0 -101z M1000 3000 l0 -100 95 0 95 0 0 100 0 100 -95 0 -95 0 0 -100z
+M1284 3087 c-2 -8 -4 -52 -2 -98 l3 -84 95 0 95 0 0 95 0 95 -93 3 c-71 2 -94
+0 -98 -11z M1570 3000 l0 -100 95 0 95 0 0 100 0 100 -95 0 -95 0 0 -100z
+M1857 3093 c-4 -3 -7 -48 -7 -100 l0 -93 95 0 95 0 0 100 0 100 -88 0 c-49 0
+-92 -3 -95 -7z M2134 3087 c-2 -8 -4 -52 -2 -98 l3 -84 98 -3 98 -3 -3 98 -3
+98 -93 3 c-71 2 -94 0 -98 -11z M2420 3000 l0 -100 95 0 95 0 0 100 0 100 -95
+0 -95 0 0 -100z M2707 3094 c-4 -4 -7 -49 -7 -101 l0 -94 98 3 97 3 0 95 0 95
+-90 3 c-50 1 -94 0 -98 -4z M2990 3000 l0 -100 95 0 96 0 -3 98 -3 97 -92 3
+-93 3 0 -101z M150 2735 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M430
+2735 l0 -95 100 0 100 0 0 95 0 95 -100 0 -100 0 0 -95z M720 2735 l0 -95 95
+0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M1000 2735 l0 -95 95 0 95 0 0 95 0 95
+-95 0 -95 0 0 -95z M1280 2735 l0 -95 100 0 100 0 0 95 0 95 -100 0 -100 0 0
+-95z M1570 2735 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M1850 2735 l0
+-95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M2130 2735 l0 -95 100 0 100 0 0
+95 0 95 -100 0 -100 0 0 -95z M2420 2735 l0 -95 95 0 95 0 0 95 0 95 -95 0
+-95 0 0 -95z M2700 2735 l0 -95 100 0 100 0 0 95 0 95 -100 0 -100 0 0 -95z
+M2990 2735 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M150 2470 l0 -100
+95 0 95 0 0 100 0 100 -95 0 -95 0 0 -100z M434 2557 c-2 -8 -4 -52 -2 -98 l3
+-84 95 0 95 0 0 95 0 95 -93 3 c-71 2 -94 0 -98 -11z M720 2470 l0 -101 93 3
+92 3 0 95 0 95 -92 3 -93 3 0 -101z M1000 2470 l0 -100 95 0 95 0 0 100 0 100
+-95 0 -95 0 0 -100z M1284 2557 c-2 -8 -4 -52 -2 -98 l3 -84 95 0 95 0 0 95 0
+95 -93 3 c-71 2 -94 0 -98 -11z M1570 2470 l0 -100 95 0 95 0 0 100 0 100 -95
+0 -95 0 0 -100z M1854 2557 c-3 -8 -4 -52 -2 -98 l3 -84 93 -3 92 -3 0 101 0
+100 -90 0 c-66 0 -92 -4 -96 -13z M2134 2557 c-2 -8 -4 -52 -2 -98 l3 -84 95
+0 95 0 0 95 0 95 -93 3 c-71 2 -94 0 -98 -11z M2420 2470 l0 -100 95 0 95 0 0
+100 0 100 -95 0 -95 0 0 -100z M2704 2557 c-2 -8 -4 -52 -2 -98 l3 -84 95 0
+95 0 0 95 0 95 -93 3 c-71 2 -94 0 -98 -11z M2990 2470 l0 -101 93 3 92 3 0
+95 0 95 -92 3 -93 3 0 -101z M3270 2470 l0 -100 95 0 95 0 0 100 0 100 -95 0
+-95 0 0 -100z M150 2205 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M430
+2205 l0 -95 100 0 100 0 0 95 0 95 -100 0 -100 0 0 -95z M720 2205 l0 -95 95
+0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M1000 2205 l0 -95 95 0 95 0 0 95 0 95
+-95 0 -95 0 0 -95z M1280 2205 l0 -95 100 0 100 0 0 95 0 95 -100 0 -100 0 0
+-95z M1570 2205 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M1850 2205 l0
+-95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M2130 2205 l0 -95 100 0 100 0 0
+95 0 95 -100 0 -100 0 0 -95z M2420 2205 l0 -95 95 0 95 0 0 95 0 95 -95 0
+-95 0 0 -95z M2700 2205 l0 -95 100 0 100 0 0 95 0 95 -100 0 -100 0 0 -95z
+M3270 2205 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M434 2027 c-2 -8
+-4 -52 -2 -98 l3 -84 95 0 95 0 0 95 0 95 -93 3 c-71 2 -94 0 -98 -11z M720
+1940 l0 -101 93 3 92 3 0 95 0 95 -92 3 -93 3 0 -101z M1000 1940 l0 -100 95
+0 95 0 0 100 0 100 -95 0 -95 0 0 -100z M1284 2027 c-2 -8 -4 -52 -2 -98 l3
+-84 95 0 95 0 0 95 0 95 -93 3 c-71 2 -94 0 -98 -11z M1854 2027 c-3 -8 -4
+-52 -2 -98 l3 -84 93 -3 92 -3 0 101 0 100 -90 0 c-66 0 -92 -4 -96 -13z
+M2134 2027 c-2 -8 -4 -52 -2 -98 l3 -84 95 0 95 0 0 95 0 95 -93 3 c-71 2 -94
+0 -98 -11z M2420 1940 l0 -100 95 0 95 0 0 100 0 100 -95 0 -95 0 0 -100z
+M2990 1940 l0 -101 93 3 92 3 0 95 0 95 -92 3 -93 3 0 -101z M3270 1940 l0
+-100 95 0 95 0 0 100 0 100 -95 0 -95 0 0 -100z M720 1675 l0 -95 95 0 95 0 0
+95 0 95 -95 0 -95 0 0 -95z M1000 1675 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95
+0 0 -95z M1280 1675 l0 -95 100 0 100 0 0 95 0 95 -100 0 -100 0 0 -95z M1570
+1675 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M1850 1675 l0 -95 95 0
+95 0 0 95 0 95 -95 0 -95 0 0 -95z M2130 1675 l0 -95 100 0 100 0 0 95 0 95
+-100 0 -100 0 0 -95z M2420 1675 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0
+-95z M2700 1675 l0 -95 100 0 100 0 0 95 0 95 -100 0 -100 0 0 -95z M2990
+1675 l0 -95 95 0 95 0 0 95 0 95 -95 0 -95 0 0 -95z M720 1410 l0 -101 93 3
+92 3 3 98 3 97 -96 0 -95 0 0 -100z M1000 1410 l0 -100 95 0 95 0 0 100 0 100
+-95 0 -95 0 0 -100z M1284 1497 c-2 -8 -4 -52 -2 -98 l3 -84 95 0 95 0 0 95 0
+95 -93 3 c-71 2 -94 0 -98 -11z M1550 908 c0 -715 0 -714 -107 -860 l-35 -48
+391 0 391 0 -37 48 c-108 141 -113 179 -113 882 l0 580 -245 0 -245 0 0 -602z
+M2134 1497 c-3 -8 -4 -52 -2 -98 l3 -84 95 0 95 0 3 98 3 97 -96 0 c-70 0 -97
+-4 -101 -13z M2420 1410 l0 -100 95 0 95 0 0 100 0 100 -95 0 -95 0 0 -100z
+M2702 1413 l3 -98 95 0 95 0 0 95 0 95 -98 3 -98 3 3 -98z M1280 1145 l0 -95
+100 0 100 0 0 95 0 95 -100 0 -100 0 0 -95z M2700 1145 l0 -95 100 0 100 0 0
+95 0 95 -100 0 -100 0 0 -95z M720 547 c0 -384 1 -377 -57 -377 -31 0 -32 1
+-23 26 6 14 10 154 10 325 l0 299 -85 0 -85 0 0 -324 0 -325 -22 -3 c-21 -3
+-23 -9 -26 -86 l-3 -82 158 0 c204 1 248 18 288 113 13 30 15 97 15 412 l0
+375 -85 0 -85 0 0 -353z M3028 633 c-3 -260 -4 -268 -23 -268 -19 0 -20 8 -23
+228 l-2 227 -85 0 -85 0 0 -319 c0 -353 4 -378 63 -439 45 -46 107 -62 247
+-62 141 0 194 15 244 70 53 59 56 83 56 433 l0 317 -85 0 -85 0 0 -303 c0
+-369 9 -347 -133 -347 -104 0 -137 14 -137 56 0 21 3 23 19 14 29 -15 98 -12
+132 6 62 32 69 66 69 377 l0 277 -85 0 -85 0 -2 -267z M3988 806 c-36 -24 -38
+-24 -38 -6 0 18 -7 20 -85 20 l-85 0 0 -410 0 -410 85 0 85 0 0 316 c0 322 4
+354 38 354 40 0 42 -16 42 -262 0 -231 -1 -238 -20 -238 -18 0 -20 -7 -20 -85
+l0 -85 105 0 105 0 0 355 c0 279 -3 363 -14 388 -35 82 -128 112 -198 63z M0
+735 l0 -85 101 0 c93 0 100 -1 93 -17 -5 -10 -10 -156 -12 -325 l-3 -308 86 0
+85 0 0 325 0 325 25 0 c25 0 25 1 25 85 l0 85 -200 0 -200 0 0 -85z M940 735
+c0 -84 0 -85 25 -85 36 0 45 -27 45 -139 l0 -101 86 0 86 0 -4 153 c-3 121 -7
+159 -22 185 -23 44 -84 71 -158 72 l-58 0 0 -85z M2350 736 l0 -86 88 0 c55 0
+92 -4 100 -12 9 -9 12 -76 12 -240 l0 -228 -100 0 -100 0 0 -85 0 -85 200 0
+201 0 -3 83 c-3 77 -4 82 -26 85 -18 3 -22 7 -15 20 4 9 9 130 11 267 4 352 0
+358 -229 363 l-139 4 0 -86z M3470 735 c0 -84 0 -85 25 -85 42 0 45 -21 45
+-344 l0 -306 86 0 85 0 -3 357 c-3 324 -5 361 -21 391 -24 44 -85 71 -159 72
+l-58 0 0 -85z"/>
+</g></svg>
+  </div>
+  <div class="bar"><i></i><i></i><i></i></div>
+</header>
+
+<div class="hero">
+  <h2>הרשמה ליומן הוועדה</h2>
+  <p>נרשמים פעם אחת, וכל האירועים יושבים אצלכם ביומן. אירוע חדש שנוסף או תאריך שזז מתעדכן אצלכם לבד, בלי לעשות כלום.</p>
+  <div class="actions"><a class="btn" href="https://calendar.google.com/calendar/u/0?cid=Y19iYjBjNjFkNDRiZmMxZDliNDlkNmI4ZWZiNzlkMGFlZTczYmQ3NjMzNzk4YTdmNDMzMjg3NTM1ZmUxYjZiNGY1QGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20">Google Calendar</a><a class="btn ghost" href="webcal://calendar.google.com/calendar/ical/c_bb0c61d44bfc1d9b49d6b8efb79d0aee73bd7633798a7f433287535fe1b6b4f5%40group.calendar.google.com/public/basic.ics">אייפון / אאוטלוק</a></div>
+</div>
+
+<p class="lede">אפשר פשוט לקרוא את התכנייה כמו שהיא. מי שרוצה, לוחץ ליד אירוע בודד, או נרשם למעלה ומקבל הכל.</p>
+
+<div class="months"><section class="month"><h2>ספטמבר <span class="yr">2026</span></h2><ul><li class="event"><div class="head"><span class="chip date">4-5.9</span><h3>קמפינג בחורשת טל</h3></div><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%D7%99%D7%A2%D7%93%20%7C%20%D7%A7%D7%9E%D7%A4%D7%99%D7%A0%D7%92%20%D7%91%D7%97%D7%95%D7%A8%D7%A9%D7%AA%20%D7%98%D7%9C&amp;dates=20260904/20260906&amp;location=%D7%9E%D7%95%D7%A9%D7%91%20%D7%99%D7%A2%D7%93">Google Calendar</a><a class="btn" href="ics/camping-horshat-tal.ics">אייפון / אאוטלוק</a></div></li><li class="event"><div class="head"><span class="chip date">11.9</span><h3>הפנינג בדשא</h3></div><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%D7%99%D7%A2%D7%93%20%7C%20%D7%94%D7%A4%D7%A0%D7%99%D7%A0%D7%92%20%D7%91%D7%93%D7%A9%D7%90&amp;dates=20260911/20260912&amp;location=%D7%9E%D7%95%D7%A9%D7%91%20%D7%99%D7%A2%D7%93">Google Calendar</a><a class="btn" href="ics/hapening-badeshe.ics">אייפון / אאוטלוק</a></div></li></ul></section><section class="month"><h2>אוקטובר <span class="yr">2026</span></h2><ul><li class="event"><div class="head"><span class="chip date">15.10</span><h3>הרצאה של ענת אנגרסט</h3></div><p class="note">לציון שלוש שנים לאירועי 7.10</p><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%D7%99%D7%A2%D7%93%20%7C%20%D7%94%D7%A8%D7%A6%D7%90%D7%94%20%D7%A9%D7%9C%20%D7%A2%D7%A0%D7%AA%20%D7%90%D7%A0%D7%92%D7%A8%D7%A1%D7%98&amp;dates=20261015/20261016&amp;location=%D7%9E%D7%95%D7%A9%D7%91%20%D7%99%D7%A2%D7%93&amp;details=%D7%9C%D7%A6%D7%99%D7%95%D7%9F%20%D7%A9%D7%9C%D7%95%D7%A9%20%D7%A9%D7%A0%D7%99%D7%9D%20%D7%9C%D7%90%D7%99%D7%A8%D7%95%D7%A2%D7%99%207.10">Google Calendar</a><a class="btn" href="ics/anat-angrest.ics">אייפון / אאוטלוק</a></div></li><li class="event"><div class="head"><span class="chip date">23.10</span><h3>חלום ליל קיץ</h3></div><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%D7%99%D7%A2%D7%93%20%7C%20%D7%97%D7%9C%D7%95%D7%9D%20%D7%9C%D7%99%D7%9C%20%D7%A7%D7%99%D7%A5&amp;dates=20261023/20261024&amp;location=%D7%9E%D7%95%D7%A9%D7%91%20%D7%99%D7%A2%D7%93">Google Calendar</a><a class="btn" href="ics/halom-leil-kayitz.ics">אייפון / אאוטלוק</a></div></li><li class="event"><div class="head"><span class="chip date">31.10</span><h3>חג המעלות</h3></div><p class="note">חג הנוער</p><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%D7%99%D7%A2%D7%93%20%7C%20%D7%97%D7%92%20%D7%94%D7%9E%D7%A2%D7%9C%D7%95%D7%AA&amp;dates=20261031/20261101&amp;location=%D7%9E%D7%95%D7%A9%D7%91%20%D7%99%D7%A2%D7%93&amp;details=%D7%97%D7%92%20%D7%94%D7%A0%D7%95%D7%A2%D7%A8">Google Calendar</a><a class="btn" href="ics/hag-hamaalot.ics">אייפון / אאוטלוק</a></div></li></ul></section><section class="month"><h2>דצמבר <span class="yr">2026</span></h2><ul><li class="event"><div class="head"><span class="chip date">4.12</span><h3>חנוכה, הדלקת נר ראשון</h3></div><p class="note">אירוע קהילתי בהובלת הנוער</p><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%D7%99%D7%A2%D7%93%20%7C%20%D7%97%D7%A0%D7%95%D7%9B%D7%94%2C%20%D7%94%D7%93%D7%9C%D7%A7%D7%AA%20%D7%A0%D7%A8%20%D7%A8%D7%90%D7%A9%D7%95%D7%9F&amp;dates=20261204/20261205&amp;location=%D7%9E%D7%95%D7%A9%D7%91%20%D7%99%D7%A2%D7%93&amp;details=%D7%90%D7%99%D7%A8%D7%95%D7%A2%20%D7%A7%D7%94%D7%99%D7%9C%D7%AA%D7%99%20%D7%91%D7%94%D7%95%D7%91%D7%9C%D7%AA%20%D7%94%D7%A0%D7%95%D7%A2%D7%A8">Google Calendar</a><a class="btn" href="ics/hanukkah-ner-rishon.ics">אייפון / אאוטלוק</a></div></li><li class="event"><div class="head"><span class="chip soon">פרטים בהמשך</span><h3>אירוע למשפחות</h3></div><p class="pending">התאריך יפורסם בהמשך</p></li></ul></section><section class="month"><h2>ינואר <span class="yr">2027</span></h2><ul><li class="event"><div class="head"><span class="chip date">23.1.27</span><h3>ט&quot;ו בשבט</h3></div><p class="note">נטיעות ופעילות קהילתית</p><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%D7%99%D7%A2%D7%93%20%7C%20%D7%98%22%D7%95%20%D7%91%D7%A9%D7%91%D7%98&amp;dates=20270123/20270124&amp;location=%D7%9E%D7%95%D7%A9%D7%91%20%D7%99%D7%A2%D7%93&amp;details=%D7%A0%D7%98%D7%99%D7%A2%D7%95%D7%AA%20%D7%95%D7%A4%D7%A2%D7%99%D7%9C%D7%95%D7%AA%20%D7%A7%D7%94%D7%99%D7%9C%D7%AA%D7%99%D7%AA">Google Calendar</a><a class="btn" href="ics/tu-bishvat.ics">אייפון / אאוטלוק</a></div></li></ul></section><section class="month"><h2>פברואר <span class="yr">2027</span></h2><ul><li class="event"><div class="head"><span class="chip soon">פרטים בהמשך</span><h3>ערב נשים</h3></div><p class="note">לקראת יום האישה הבינלאומי</p><p class="pending">התאריך יפורסם בהמשך</p></li></ul></section><section class="month"><h2>מרץ <span class="yr">2027</span></h2><ul><li class="event"><div class="head"><span class="chip date">23.3</span><h3>פורים מבוגרים</h3></div><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%D7%99%D7%A2%D7%93%20%7C%20%D7%A4%D7%95%D7%A8%D7%99%D7%9D%20%D7%9E%D7%91%D7%95%D7%92%D7%A8%D7%99%D7%9D&amp;dates=20270323/20270324&amp;location=%D7%9E%D7%95%D7%A9%D7%91%20%D7%99%D7%A2%D7%93">Google Calendar</a><a class="btn" href="ics/purim-mevugarim.ics">אייפון / אאוטלוק</a></div></li><li class="event"><div class="head"><span class="chip soon">פרטים בהמשך</span><h3>פורימון</h3></div><p class="pending">התאריך יפורסם בהמשך</p></li></ul></section><section class="month"><h2>אפריל <span class="yr">2027</span></h2><ul><li class="event"><div class="head"><span class="chip soon">פרטים בהמשך</span><h3>טיול פסח למשפחות</h3></div><p class="note">חג הפסח: 21-24.4</p><p class="pending">התאריך יפורסם בהמשך</p></li></ul></section><section class="month"><h2>מאי <span class="yr">2027</span></h2><ul><li class="event"><div class="head"><span class="chip date">3.5.27</span><h3>ערב יום השואה</h3></div><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%D7%99%D7%A2%D7%93%20%7C%20%D7%A2%D7%A8%D7%91%20%D7%99%D7%95%D7%9D%20%D7%94%D7%A9%D7%95%D7%90%D7%94&amp;dates=20270503/20270504&amp;location=%D7%9E%D7%95%D7%A9%D7%91%20%D7%99%D7%A2%D7%93">Google Calendar</a><a class="btn" href="ics/yom-hashoah.ics">אייפון / אאוטלוק</a></div></li><li class="event"><div class="head"><span class="chip date">10.5.27</span><h3>ערב יום הזיכרון</h3></div><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%D7%99%D7%A2%D7%93%20%7C%20%D7%A2%D7%A8%D7%91%20%D7%99%D7%95%D7%9D%20%D7%94%D7%96%D7%99%D7%9B%D7%A8%D7%95%D7%9F&amp;dates=20270510/20270511&amp;location=%D7%9E%D7%95%D7%A9%D7%91%20%D7%99%D7%A2%D7%93">Google Calendar</a><a class="btn" href="ics/yom-hazikaron.ics">אייפון / אאוטלוק</a></div></li><li class="event"><div class="head"><span class="chip date">11.5.27</span><h3>ערב יום העצמאות</h3></div><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%D7%99%D7%A2%D7%93%20%7C%20%D7%A2%D7%A8%D7%91%20%D7%99%D7%95%D7%9D%20%D7%94%D7%A2%D7%A6%D7%9E%D7%90%D7%95%D7%AA&amp;dates=20270511/20270512&amp;location=%D7%9E%D7%95%D7%A9%D7%91%20%D7%99%D7%A2%D7%93">Google Calendar</a><a class="btn" href="ics/yom-haatzmaut.ics">אייפון / אאוטלוק</a></div></li><li class="event"><div class="head"><span class="chip date">25.5.27</span><h3>ל&quot;ג בעומר</h3></div><div class="actions"><a class="btn primary" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=%D7%99%D7%A2%D7%93%20%7C%20%D7%9C%22%D7%92%20%D7%91%D7%A2%D7%95%D7%9E%D7%A8&amp;dates=20270525/20270526&amp;location=%D7%9E%D7%95%D7%A9%D7%91%20%D7%99%D7%A2%D7%93">Google Calendar</a><a class="btn" href="ics/lag-baomer.ics">אייפון / אאוטלוק</a></div></li></ul></section><section class="month"><h2>יוני <span class="yr">2027</span></h2><ul><li class="event"><div class="head"><span class="chip soon">פרטים בהמשך</span><h3>טקס מגבות</h3></div><p class="pending">התאריך יפורסם בהמשך</p></li></ul></section></div>
+
+<div class="also">
+  <h2>ועוד בתכנון לאורך השנה</h2>
+  <div class="pills"><span class="pill">YADTED</span><span class="pill">הצגות ילדים</span><span class="pill">מועדון סועדים</span><span class="pill">קבלת שבת יישובית</span><span class="pill">מרק ומשחק</span><span class="pill">ספורט</span><span class="pill">הרצאות</span><span class="pill">קונצרטים והופעות</span></div>
+</div>
+
+<p class="tag">קהילה. תרבות. יחד.</p>
+<footer>ייתכנו שינויים. פרטים מלאים יפורסמו לקראת כל אירוע.</footer>
+</div>
+</body>
+</html>

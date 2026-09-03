@@ -1,0 +1,2 @@
+# RFC 5545 requires CRLF; git must not normalise these
+*.ics -text
