@@ -7,11 +7,11 @@ X-WR-CALNAME:נפגשים ביעד
 X-WR-TIMEZONE:Asia/Jerusalem
 BEGIN:VEVENT
 UID:hapening-badeshe@moshav-yaad
-SEQUENCE:2
-DTSTAMP:20260903T090222Z
+SEQUENCE:3
+DTSTAMP:20260903T100628Z
 DTSTART;VALUE=DATE:20260911
 DTEND;VALUE=DATE:20260912
-SUMMARY:יעד | הפנינג בדשא + תפוח בדבש
+SUMMARY:יעד | תפוח בדבש
 DESCRIPTION:תכנייה מלאה ועדכונים: https://kerensolen.gith
  ub.io/moshav-yaad-events/
 LOCATION:מושב יעד
