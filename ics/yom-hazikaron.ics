@@ -8,10 +8,12 @@ X-WR-TIMEZONE:Asia/Jerusalem
 BEGIN:VEVENT
 UID:yom-hazikaron@moshav-yaad
 SEQUENCE:0
-DTSTAMP:20260903T075740Z
+DTSTAMP:20260903T084234Z
 DTSTART;VALUE=DATE:20270510
 DTEND;VALUE=DATE:20270511
 SUMMARY:יעד | ערב יום הזיכרון
+DESCRIPTION:תכנייה מלאה ועדכונים: https://kerensolen.gith
+ ub.io/moshav-yaad-events/
 LOCATION:מושב יעד
 END:VEVENT
 END:VCALENDAR

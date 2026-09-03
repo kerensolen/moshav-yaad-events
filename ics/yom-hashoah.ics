@@ -8,10 +8,12 @@ X-WR-TIMEZONE:Asia/Jerusalem
 BEGIN:VEVENT
 UID:yom-hashoah@moshav-yaad
 SEQUENCE:0
-DTSTAMP:20260903T075740Z
+DTSTAMP:20260903T084234Z
 DTSTART;VALUE=DATE:20270503
 DTEND;VALUE=DATE:20270504
 SUMMARY:יעד | ערב יום השואה
+DESCRIPTION:תכנייה מלאה ועדכונים: https://kerensolen.gith
+ ub.io/moshav-yaad-events/
 LOCATION:מושב יעד
 END:VEVENT
 END:VCALENDAR

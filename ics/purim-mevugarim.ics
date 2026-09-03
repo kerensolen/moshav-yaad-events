@@ -8,10 +8,12 @@ X-WR-TIMEZONE:Asia/Jerusalem
 BEGIN:VEVENT
 UID:purim-mevugarim@moshav-yaad
 SEQUENCE:0
-DTSTAMP:20260903T075740Z
+DTSTAMP:20260903T084234Z
 DTSTART;VALUE=DATE:20270323
 DTEND;VALUE=DATE:20270324
 SUMMARY:יעד | פורים מבוגרים
+DESCRIPTION:תכנייה מלאה ועדכונים: https://kerensolen.gith
+ ub.io/moshav-yaad-events/
 LOCATION:מושב יעד
 END:VEVENT
 END:VCALENDAR
