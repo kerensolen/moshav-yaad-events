@@ -6,15 +6,14 @@ METHOD:PUBLISH
 X-WR-CALNAME:נפגשים ביעד
 X-WR-TIMEZONE:Asia/Jerusalem
 BEGIN:VEVENT
-UID:anat-angrest@moshav-yaad
+UID:kanfei-tikva@moshav-yaad
 SEQUENCE:0
 DTSTAMP:20260903T085614Z
 DTSTART;VALUE=DATE:20261015
 DTEND;VALUE=DATE:20261016
-SUMMARY:יעד | הרצאה של ענת אנגרסט
-DESCRIPTION:לציון שלוש שנים לאירועי 7.10 תכנייה 
- מלאה ועדכונים: https://kerensolen.github.io/moshav-yaad-events
- /
+SUMMARY:יעד | חנוכת הקיר "כנפיים של תקווה"
+DESCRIPTION:לפני ההרצאה תכנייה מלאה ועדכונים: h
+ ttps://kerensolen.github.io/moshav-yaad-events/
 LOCATION:מושב יעד
 END:VEVENT
 END:VCALENDAR
