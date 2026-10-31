@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Moshav Yaad//Culture//HE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:נפגשים ביעד
+X-WR-TIMEZONE:Asia/Jerusalem
+BEGIN:VEVENT
+UID:hanukkah-hatzagat-yeladim@moshav-yaad
+SEQUENCE:0
+DTSTAMP:20261031T184845Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:יעד | חנוכה\, הצגת ילדים של המועצה
+DESCRIPTION:תכנייה מלאה ועדכונים: https://kerensolen.gith
+ ub.io/moshav-yaad-events/
+LOCATION:מושב יעד
+END:VEVENT
+END:VCALENDAR
