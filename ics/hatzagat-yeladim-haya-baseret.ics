@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Moshav Yaad//Culture//HE
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:נפגשים ביעד
+X-WR-TIMEZONE:Asia/Jerusalem
+BEGIN:VEVENT
+UID:hatzagat-yeladim-haya-baseret@moshav-yaad
+SEQUENCE:0
+DTSTAMP:20261110T072031Z
+DTSTART;VALUE=DATE:20261225
+DTEND;VALUE=DATE:20261226
+SUMMARY:יעד | הצגת ילדים "חיה בסרט"
+DESCRIPTION:מנוי הצגות ילדים תכנייה מלאה ועדכו
+ נים: https://kerensolen.github.io/moshav-yaad-events/
+LOCATION:מושב יעד
+END:VEVENT
+END:VCALENDAR

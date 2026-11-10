@@ -7,13 +7,14 @@ X-WR-CALNAME:נפגשים ביעד
 X-WR-TIMEZONE:Asia/Jerusalem
 BEGIN:VEVENT
 UID:hanukkah-ner-rishon@moshav-yaad
-SEQUENCE:1
-DTSTAMP:20261031T185022Z
-DTSTART;VALUE=DATE:20261212
-DTEND;VALUE=DATE:20261213
-SUMMARY:יעד | חנוכה\, הדלקת נר אחרון
-DESCRIPTION:אירוע קהילתי בהובלת הנוער תכנייה מ
- לאה ועדכונים: https://kerensolen.github.io/moshav-yaad-events/
+SEQUENCE:2
+DTSTAMP:20261110T072031Z
+DTSTART;VALUE=DATE:20261209
+DTEND;VALUE=DATE:20261210
+SUMMARY:יעד | חנוכה\, פעילות קהילתית בהובלת הנ
+ וער
+DESCRIPTION:תכנייה מלאה ועדכונים: https://kerensolen.gith
+ ub.io/moshav-yaad-events/
 LOCATION:מושב יעד
 END:VEVENT
 END:VCALENDAR
